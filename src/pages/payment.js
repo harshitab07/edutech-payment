@@ -14,7 +14,7 @@ const Payment = () => {
 
   const getToken = async () => {
     try {
-      const { data } = await axios.get('http://localhost:8080/api/v1/payment/payment-token');
+      const { data } = await axios.get('https://edutech-payment-api.onrender.com/api/v1/payment/payment-token');
       setClientToken(data.data?.clientToken);
     } catch (error) {
       console.log(error);
@@ -29,7 +29,7 @@ const Payment = () => {
     try {
       const { nonce } = await dropInInstance.requestPaymentMethod();
       setLoading(true);
-      await axios.post('http://localhost:8080/api/v1/payment/payment', { nonce, email: "test@email.com"  });
+      await axios.post('https://edutech-payment-api.onrender.com/api/v1/payment/payment', { nonce, email: "test@email.com"  });
       setLoading(false);
       toast.success('Order placed successfully!');
       setTimeout(() => navigate('/success'), 2000);
