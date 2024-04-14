@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import HomeData from '../data';
 import heroImg from "../assets/heroImg.webp";
 import axios from 'axios';
